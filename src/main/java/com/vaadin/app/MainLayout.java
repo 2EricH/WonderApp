@@ -1,3 +1,5 @@
+package com.vaadin.app;
+
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
@@ -14,10 +16,8 @@ public class MainLayout extends VerticalLayout implements RouterLayout {
 private static final long serialVersionUID = 4L;
 
 public MainLayout() {
-	this.primaryLayout();
-	this.secondaryLayout();
+	
 }
-
     public VerticalLayout primaryLayout() {
 		VerticalLayout layout = new VerticalLayout();
 		
