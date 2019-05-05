@@ -18,8 +18,6 @@ public class MainLayout extends VerticalLayout implements RouterLayout {
 private static final long serialVersionUID = 4L;
 TextArea diary = new TextArea();
 
-
-
 public MainLayout() {
 		
 }
@@ -91,6 +89,7 @@ public MainLayout() {
     public HorizontalLayout secondaryLayout() {
 		HorizontalLayout view = new HorizontalLayout();
 		HorizontalLayout layout = new HorizontalLayout();
+		VerticalLayout organize = new VerticalLayout();
 		
 		Label secondLabel = new Label("Toolbar");
 		
@@ -98,12 +97,16 @@ public MainLayout() {
 		
         diary.setPlaceholder("");
 
-		
-        Button button = new Button("Click me",
-                event -> Notification.show("Clicked!"));
-        layout.add(diary);
+        Button button = new Button("Save Entry", event -> {
+        	Notification.show("Saved!");
+        	diary.clear();
+        	diary.setPlaceholder("");
+        	diary.setEnabled(false);
+        });
         
-        view.add(secondLabel, layout, button);
+        layout.add(diary, button);
+        organize.add(secondLabel, layout);
+        view.add(organize);
         
 		setHorizontalComponentAlignment(Alignment.CENTER, view);
 		

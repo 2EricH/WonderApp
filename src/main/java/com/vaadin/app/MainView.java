@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
+import com.vaadin.flow.component.splitlayout.SplitLayoutVariant;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
@@ -24,20 +25,15 @@ public class MainView extends SplitLayout{
 	public MainView() {
 		MainLayout fillview = new MainLayout();
 		
-		setSplitterPosition(1580);	
 		setOrientation(Orientation.VERTICAL);
-		setPrimaryStyle("minWidth", "400px");
-		setPrimaryStyle("maxWidth", "600px");
+		setSplitterPosition(0);
+		addThemeVariants(SplitLayoutVariant.LUMO_SMALL);
 //	
-		setComponentAlignment( fillview, Alignment.CENTER );
-        addToPrimary(fillview.primaryLayout());
+        addToPrimary(fillview.primaryLayout());        
         addToSecondary(fillview.secondaryLayout());
         
-        
-	}
 
-	private void setComponentAlignment(MainLayout fillview, Alignment center) {
-		// TODO Auto-generated method stub
-		
+        
+        
 	}
 }
