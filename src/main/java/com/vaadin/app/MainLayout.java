@@ -103,56 +103,100 @@ public MainLayout() {
 		Icon wealthCircle = new Icon(VaadinIcon.CIRCLE);
 		wealthCircle.getStyle().set("cursor", "pointer");
 		wealthCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Wealth entry here");
+                	diary.setEnabled(true);
+        });		
 		wealthCircle.setSize("150px");
+		wealthCircle.setColor("#ac00e6");
+
 		
 		Icon communityCircle = new Icon(VaadinIcon.CIRCLE);
 		communityCircle.getStyle().set("cursor", "pointer");
 		communityCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Community entry here");
+                	diary.setEnabled(true);
+        });		
 		communityCircle.setSize("150px");
+		communityCircle.setColor("#70db70");
+
 		
 		Icon wisdomCircle = new Icon(VaadinIcon.CIRCLE);
 		wisdomCircle.getStyle().set("cursor", "pointer");
 		wisdomCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Wisdom entry here");
+                	diary.setEnabled(true);
+        });		
 		wisdomCircle.setSize("150px");
+		wisdomCircle.setColor("#00ace6");
+
 		
 		Icon reputationCircle = new Icon(VaadinIcon.CIRCLE);
 		reputationCircle.getStyle().set("cursor", "pointer");
 		reputationCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Reputation entry here");
+                	diary.setEnabled(true);
+        });		
 		reputationCircle.setSize("150px");
+		reputationCircle.setColor("#ff6666");
+
 		
 		Icon healthCircle = new Icon(VaadinIcon.CIRCLE);
 		healthCircle.getStyle().set("cursor", "pointer");
 		healthCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Health entry here");
+                	diary.setEnabled(true);
+        });
 		healthCircle.setSize("150px");
+		healthCircle.setColor("#ffff66");
+
 		
 		Icon purposeCircle = new Icon(VaadinIcon.CIRCLE);
 		purposeCircle.getStyle().set("cursor", "pointer");
 		purposeCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Purpose entry here");
+                	diary.setEnabled(true);
+        });
 		purposeCircle.setSize("150px");
+		purposeCircle.setColor("#001a33");
+
 		
 		Icon loveCircle = new Icon(VaadinIcon.CIRCLE);
 		loveCircle.getStyle().set("cursor", "pointer");
 		loveCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Love entry here");
+                	diary.setEnabled(true);
+        });		
 		loveCircle.setSize("150px");
+		loveCircle.setColor("#ff6699");
+
 		
 		Icon creativityCircle = new Icon(VaadinIcon.CIRCLE);
 		creativityCircle.getStyle().set("cursor", "pointer");
 		creativityCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Creativity entry here");
+                	diary.setEnabled(true);
+        });
 		creativityCircle.setSize("150px");
+		creativityCircle.setColor("#e6ffe6");
+
 		
 		Icon guidenceCircle = new Icon(VaadinIcon.CIRCLE);
 		guidenceCircle.getStyle().set("cursor", "pointer");
 		guidenceCircle.addClickListener(
-		        event -> Notification.show("Saved!"));		
+				event -> { 
+                	diary.setPlaceholder("Guidence entry here");
+                	diary.setEnabled(true);
+        });
 		guidenceCircle.setSize("150px");
+		guidenceCircle.setColor("#8c8c8c");
 		
 		 layout.add(wealthCircle, communityCircle, wisdomCircle);
 	     layout2.add(reputationCircle, healthCircle, purposeCircle);
