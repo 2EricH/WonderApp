@@ -52,6 +52,13 @@
 
     <dependencyManagement>
         <dependencies>
+            
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-charts-flow</artifactId>
+            </dependency>
+
+
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
@@ -116,6 +123,7 @@
                     <artifactId>flow-server-production-mode</artifactId>
                 </dependency>
             </dependencies>
+
 
             <build>
                 <plugins>
