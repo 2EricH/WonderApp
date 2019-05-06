@@ -231,12 +231,15 @@ public MainLayout() {
 		HorizontalLayout view = new HorizontalLayout();
 		HorizontalLayout layout = new HorizontalLayout();
 		VerticalLayout organize = new VerticalLayout();
-		
-		Label secondLabel = new Label("Toolbar");
-		
+				
 		diary.setLabel("Write your entry below :)");
 		
         diary.setPlaceholder("");
+        
+        Button generateChart = new Button("View Chart", event -> {
+        	PieChartSample chart = new PieChartSample();
+        	chart.main();
+        });   
 
         Button button = new Button("Save Entry", event -> {
         	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -273,9 +276,9 @@ public MainLayout() {
           
         });
         
-        layout.add(diary, button);
-        organize.add(secondLabel, layout);
-        view.add(organize);
+        organize.add(button, generateChart);
+        layout.add(diary, organize);
+        view.add(layout);
         
 		setHorizontalComponentAlignment(Alignment.CENTER, view);
 		

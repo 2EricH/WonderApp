@@ -1,3 +1,6 @@
+package com.vaadin.app;
+
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,7 +32,7 @@ public class PieChartSample extends Application {
         stage.show();
     }
  
-    public static void main() {
+    public void main() {
         launch();
     }
 }

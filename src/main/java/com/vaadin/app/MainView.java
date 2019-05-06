@@ -33,7 +33,11 @@ public class MainView extends SplitLayout{
         addToPrimary(fillview.primaryLayout());        
         addToSecondary(fillview.secondaryLayout());
         
-
+        Button generateChart = new Button("View Chart", event -> {
+        	PieChartSample chart = new PieChartSample();
+        });   
+        
+//        addToSecondary(generateChart);
         
         
 	}
