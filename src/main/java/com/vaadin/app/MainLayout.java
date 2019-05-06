@@ -1,5 +1,12 @@
 package com.vaadin.app;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
@@ -19,6 +26,8 @@ import com.vaadin.flow.router.RouterLayout;
 public class MainLayout extends VerticalLayout implements RouterLayout {
 private static final long serialVersionUID = 4L;
 TextArea diary = new TextArea();
+String entryType;
+
 
 public MainLayout() {
 		
@@ -28,6 +37,8 @@ public MainLayout() {
 
     public HorizontalLayout primaryLayout() {
     	diary.setEnabled(false);
+    	diary.setWidth("500px");
+
 
     	
     	HorizontalLayout view = new HorizontalLayout();  
@@ -39,15 +50,9 @@ public MainLayout() {
 		VerticalLayout layout3 = new VerticalLayout();
 
 		
-    	VerticalLayout spacing = new VerticalLayout();  
-
-		
 		Label firstLabel = new Label("Circular Design View");
 		
 		diary.setPlaceholder("placeholder text");
-		
-		
-		
 		
 //        Button wealth = new Button("Wealth", event -> { 
 //                	diary.setPlaceholder("Wealth entry here");
@@ -106,6 +111,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Wealth entry here");
                 	diary.setEnabled(true);
+                	entryType = "Wealth";
         });		
 		wealthCircle.setSize("150px");
 		wealthCircle.setColor("#ac00e6");
@@ -117,6 +123,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Community entry here");
                 	diary.setEnabled(true);
+                	entryType = "Community";
         });		
 		communityCircle.setSize("150px");
 		communityCircle.setColor("#70db70");
@@ -128,6 +135,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Wisdom entry here");
                 	diary.setEnabled(true);
+                	entryType = "Wisdom";
         });		
 		wisdomCircle.setSize("150px");
 		wisdomCircle.setColor("#00ace6");
@@ -139,6 +147,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Reputation entry here");
                 	diary.setEnabled(true);
+                	entryType = "Reputation";
         });		
 		reputationCircle.setSize("150px");
 		reputationCircle.setColor("#ff6666");
@@ -150,6 +159,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Health entry here");
                 	diary.setEnabled(true);
+                	entryType = "Health";
         });
 		healthCircle.setSize("150px");
 		healthCircle.setColor("#ffff66");
@@ -161,6 +171,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Purpose entry here");
                 	diary.setEnabled(true);
+                	entryType = "Purpose";
         });
 		purposeCircle.setSize("150px");
 		purposeCircle.setColor("#001a33");
@@ -172,6 +183,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Love entry here");
                 	diary.setEnabled(true);
+                	entryType = "Love";
         });		
 		loveCircle.setSize("150px");
 		loveCircle.setColor("#ff6699");
@@ -183,6 +195,7 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Creativity entry here");
                 	diary.setEnabled(true);
+                	entryType = "Creativity";
         });
 		creativityCircle.setSize("150px");
 		creativityCircle.setColor("#e6ffe6");
@@ -194,10 +207,11 @@ public MainLayout() {
 				event -> { 
                 	diary.setPlaceholder("Guidence entry here");
                 	diary.setEnabled(true);
+                	entryType = "Guidence";
         });
 		guidenceCircle.setSize("150px");
 		guidenceCircle.setColor("#8c8c8c");
-		
+				
 		 layout.add(wealthCircle, communityCircle, wisdomCircle);
 	     layout2.add(reputationCircle, healthCircle, purposeCircle);
 	     layout3.add(loveCircle, creativityCircle, guidenceCircle);
@@ -211,7 +225,7 @@ public MainLayout() {
         return(view);
     }
     
- // ----------------------------- Second Layout ---------------------------------------------
+ // ----------------------------- Secondary Layout ---------------------------------------------
     
     public HorizontalLayout secondaryLayout() {
 		HorizontalLayout view = new HorizontalLayout();
@@ -225,10 +239,38 @@ public MainLayout() {
         diary.setPlaceholder("");
 
         Button button = new Button("Save Entry", event -> {
-        	Notification.show("Saved!");
+        	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        	LocalDateTime now = LocalDateTime.now();
+        	String date = new String(dtf.format(now));
+        	
+        	BufferedWriter writer;
+        	String home = System.getProperty("user.home");
+        	String fileName = new String("Chart Records");
+        	File file = new File(home+"/Downloads/" + fileName + ".txt");         	
+			try {
+				 if (file.createNewFile()) {		                
+		                System.out.println("File has been created.");
+		            } else {		            
+		                System.out.println("File already exists.");
+		            }				
+				writer = new BufferedWriter(new FileWriter(file, true));
+				writer.newLine();
+				writer.write("Entry type: " + entryType);
+				writer.newLine();
+				writer.write(date + " :: " + diary.getValue());
+				writer.newLine();
+	            writer.close();
+
+			} catch (IOException e1) {
+				System.out.println("Could not find file");
+				e1.printStackTrace();
+			}
+			
+			Notification.show("Saved!");
         	diary.clear();
         	diary.setPlaceholder("");
-        	diary.setEnabled(false);
+        	diary.setEnabled(false);		
+          
         });
         
         layout.add(diary, button);
