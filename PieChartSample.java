@@ -6,9 +6,9 @@ import javafx.stage.Stage;
 import javafx.scene.chart.*;
 import javafx.scene.Group;
  
-public class PieChartSample extends Application {
+public class PieChartSample {
  
-    @Override public void start(Stage stage) {
+    @Override public void start() {
         Scene scene = new Scene(new Group());
         stage.setTitle("Imported Fruits");
         stage.setWidth(500);

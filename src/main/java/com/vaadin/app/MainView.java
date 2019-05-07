@@ -28,17 +28,11 @@ public class MainView extends SplitLayout{
 		setOrientation(Orientation.VERTICAL);
 		setSplitterPosition(0);
 		
-//		addThemeVariants(SplitLayoutVariant.LUMO_SMALL);
+		addThemeVariants(SplitLayoutVariant.LUMO_SMALL);
 
         addToPrimary(fillview.primaryLayout());        
         addToSecondary(fillview.secondaryLayout());
-        
-        Button generateChart = new Button("View Chart", event -> {
-        	PieChartSample chart = new PieChartSample();
-        });   
-        
-//        addToSecondary(generateChart);
-        
+               
         
 	}
 }

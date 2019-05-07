@@ -27,6 +27,7 @@ public class MainLayout extends VerticalLayout implements RouterLayout {
 private static final long serialVersionUID = 4L;
 TextArea diary = new TextArea();
 String entryType;
+int runcount = 0;
 
 
 public MainLayout() {
@@ -105,7 +106,7 @@ public MainLayout() {
 //	      layout3.add(love, creativity, guidence);
 		
 		
-		Icon wealthCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon wealthCircle = new Icon(VaadinIcon.CROSSHAIRS);
 		wealthCircle.getStyle().set("cursor", "pointer");
 		wealthCircle.addClickListener(
 				event -> { 
@@ -117,7 +118,7 @@ public MainLayout() {
 		wealthCircle.setColor("#ac00e6");
 
 		
-		Icon communityCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon communityCircle = new Icon(VaadinIcon.GLOBE);
 		communityCircle.getStyle().set("cursor", "pointer");
 		communityCircle.addClickListener(
 				event -> { 
@@ -129,7 +130,7 @@ public MainLayout() {
 		communityCircle.setColor("#70db70");
 
 		
-		Icon wisdomCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon wisdomCircle = new Icon(VaadinIcon.COPYRIGHT);
 		wisdomCircle.getStyle().set("cursor", "pointer");
 		wisdomCircle.addClickListener(
 				event -> { 
@@ -141,7 +142,7 @@ public MainLayout() {
 		wisdomCircle.setColor("#00ace6");
 
 		
-		Icon reputationCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon reputationCircle = new Icon(VaadinIcon.CONTROLLER);
 		reputationCircle.getStyle().set("cursor", "pointer");
 		reputationCircle.addClickListener(
 				event -> { 
@@ -153,7 +154,7 @@ public MainLayout() {
 		reputationCircle.setColor("#ff6666");
 
 		
-		Icon healthCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon healthCircle = new Icon(VaadinIcon.DOT_CIRCLE);
 		healthCircle.getStyle().set("cursor", "pointer");
 		healthCircle.addClickListener(
 				event -> { 
@@ -165,7 +166,7 @@ public MainLayout() {
 		healthCircle.setColor("#ffff66");
 
 		
-		Icon purposeCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon purposeCircle = new Icon(VaadinIcon.SUN_O);
 		purposeCircle.getStyle().set("cursor", "pointer");
 		purposeCircle.addClickListener(
 				event -> { 
@@ -177,7 +178,7 @@ public MainLayout() {
 		purposeCircle.setColor("#001a33");
 
 		
-		Icon loveCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon loveCircle = new Icon(VaadinIcon.BULLSEYE);
 		loveCircle.getStyle().set("cursor", "pointer");
 		loveCircle.addClickListener(
 				event -> { 
@@ -189,7 +190,7 @@ public MainLayout() {
 		loveCircle.setColor("#ff6699");
 
 		
-		Icon creativityCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon creativityCircle = new Icon(VaadinIcon.MOON);
 		creativityCircle.getStyle().set("cursor", "pointer");
 		creativityCircle.addClickListener(
 				event -> { 
@@ -201,7 +202,7 @@ public MainLayout() {
 		creativityCircle.setColor("#e6ffe6");
 
 		
-		Icon guidenceCircle = new Icon(VaadinIcon.CIRCLE);
+		Icon guidenceCircle = new Icon(VaadinIcon.LIFEBUOY);
 		guidenceCircle.getStyle().set("cursor", "pointer");
 		guidenceCircle.addClickListener(
 				event -> { 
@@ -238,7 +239,12 @@ public MainLayout() {
         
         Button generateChart = new Button("View Chart", event -> {
         	PieChartSample chart = new PieChartSample();
-        	chart.main();
+        	try {
+				chart.main();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+        	
         });   
 
         Button button = new Button("Save Entry", event -> {
