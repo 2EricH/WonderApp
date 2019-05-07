@@ -72,7 +72,6 @@ public static int populateData(String stringToLookFor){
  
     public void main() throws Exception {
         launch();
- 
     }
 
 
