@@ -8,7 +8,7 @@ import javafx.scene.Group;
  
 public class PieChartSample {
  
-    @Override public void start() {
+    @Override public void start(Stage stage) {
         Scene scene = new Scene(new Group());
         stage.setTitle("Imported Fruits");
         stage.setWidth(500);
@@ -28,6 +28,8 @@ public class PieChartSample {
         stage.setScene(scene);
         stage.show();
     }
+
+    
  
     public static void main() {
         launch();

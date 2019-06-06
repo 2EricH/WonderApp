@@ -16,9 +16,9 @@ import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
 
 @SuppressWarnings("serial")
-@Route("com.vaadin.app")
+@Route(value = "com.vaadin.app")
 @PWA(name = "Project Base for Vaadin Flow", shortName = "Project Base")
-@Theme(value = Lumo.class, variant = Lumo.DARK)
+//@Theme(value = Lumo.class, variant = Lumo.DARK)
 
 public class MainView extends SplitLayout{
 	
@@ -28,7 +28,7 @@ public class MainView extends SplitLayout{
 		setOrientation(Orientation.VERTICAL);
 		setSplitterPosition(0);
 		
-		addThemeVariants(SplitLayoutVariant.LUMO_SMALL);
+//		addThemeVariants(SplitLayoutVariant.LUMO_SMALL);
 
         addToPrimary(fillview.primaryLayout());        
         addToSecondary(fillview.secondaryLayout());

@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import javafx.scene.chart.*;
 import javafx.scene.Group;
  
-public class PieChartSample extends Application {
+public class GenerateChart extends Application {
 	
 public static int populateData(String stringToLookFor){    	
     	String home = System.getProperty("user.home");
@@ -32,8 +32,8 @@ public static int populateData(String stringToLookFor){
     	    while ((strLine = br.readLine()) != null)   {
     	      int startIndex = strLine.indexOf(stringToLookFor);
     	      while (startIndex != -1) {
-    	        count++;
-   	            startIndex = strLine.indexOf(stringToLookFor, startIndex +stringToLookFor.length());
+    	        count += 1;
+   	            startIndex = strLine.indexOf(stringToLookFor, startIndex + stringToLookFor.length());
     	      }
     	    }
     	    in.close();
@@ -59,14 +59,16 @@ public static int populateData(String stringToLookFor){
                 new PieChart.Data("Purpose", populateData("Entry type: Purpose")),
                 new PieChart.Data("Love", populateData("Entry type: Love")),
                 new PieChart.Data("Creativity", populateData("Entry type: Creativity")),
-        		new PieChart.Data("Guidence", populateData("Entry type: Guidence")));
+        		new PieChart.Data("Guidance", populateData("Entry type: Guidance")));
 
         final PieChart chart = new PieChart(pieChartData);
-        chart.setTitle("Imported Fruits");
+        chart.setTitle("User Data Chart");
+        
 
         ((Group) scene.getRoot()).getChildren().add(chart);
         stage.setScene(scene);
         stage.show();
+        
     }
     
  

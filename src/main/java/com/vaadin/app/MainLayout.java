@@ -19,6 +19,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.page.Viewport;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLayout;
 
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no")
@@ -37,11 +38,7 @@ public MainLayout() {
 // ----------------------------- Primary Layout ---------------------------------------------
 
     public HorizontalLayout primaryLayout() {
-    	diary.setEnabled(false);
-    	diary.setWidth("500px");
-
-
-    	
+    	   	
     	HorizontalLayout view = new HorizontalLayout();  
     	HorizontalLayout underTitle = new HorizontalLayout();  
 
@@ -106,7 +103,7 @@ public MainLayout() {
 //	      layout3.add(love, creativity, guidence);
 		
 		
-		Icon wealthCircle = new Icon(VaadinIcon.CROSSHAIRS);
+		Icon wealthCircle = new Icon(VaadinIcon.CIRCLE);
 		wealthCircle.getStyle().set("cursor", "pointer");
 		wealthCircle.addClickListener(
 				event -> { 
@@ -118,7 +115,7 @@ public MainLayout() {
 		wealthCircle.setColor("#ac00e6");
 
 		
-		Icon communityCircle = new Icon(VaadinIcon.GLOBE);
+		Icon communityCircle = new Icon(VaadinIcon.CIRCLE);
 		communityCircle.getStyle().set("cursor", "pointer");
 		communityCircle.addClickListener(
 				event -> { 
@@ -130,7 +127,7 @@ public MainLayout() {
 		communityCircle.setColor("#70db70");
 
 		
-		Icon wisdomCircle = new Icon(VaadinIcon.COPYRIGHT);
+		Icon wisdomCircle = new Icon(VaadinIcon.CIRCLE);
 		wisdomCircle.getStyle().set("cursor", "pointer");
 		wisdomCircle.addClickListener(
 				event -> { 
@@ -142,7 +139,7 @@ public MainLayout() {
 		wisdomCircle.setColor("#00ace6");
 
 		
-		Icon reputationCircle = new Icon(VaadinIcon.CONTROLLER);
+		Icon reputationCircle = new Icon(VaadinIcon.CIRCLE);
 		reputationCircle.getStyle().set("cursor", "pointer");
 		reputationCircle.addClickListener(
 				event -> { 
@@ -154,7 +151,7 @@ public MainLayout() {
 		reputationCircle.setColor("#ff6666");
 
 		
-		Icon healthCircle = new Icon(VaadinIcon.DOT_CIRCLE);
+		Icon healthCircle = new Icon(VaadinIcon.CIRCLE);
 		healthCircle.getStyle().set("cursor", "pointer");
 		healthCircle.addClickListener(
 				event -> { 
@@ -166,7 +163,7 @@ public MainLayout() {
 		healthCircle.setColor("#ffff66");
 
 		
-		Icon purposeCircle = new Icon(VaadinIcon.SUN_O);
+		Icon purposeCircle = new Icon(VaadinIcon.CIRCLE);
 		purposeCircle.getStyle().set("cursor", "pointer");
 		purposeCircle.addClickListener(
 				event -> { 
@@ -178,7 +175,7 @@ public MainLayout() {
 		purposeCircle.setColor("#001a33");
 
 		
-		Icon loveCircle = new Icon(VaadinIcon.BULLSEYE);
+		Icon loveCircle = new Icon(VaadinIcon.CIRCLE);
 		loveCircle.getStyle().set("cursor", "pointer");
 		loveCircle.addClickListener(
 				event -> { 
@@ -190,7 +187,7 @@ public MainLayout() {
 		loveCircle.setColor("#ff6699");
 
 		
-		Icon creativityCircle = new Icon(VaadinIcon.MOON);
+		Icon creativityCircle = new Icon(VaadinIcon.CIRCLE);
 		creativityCircle.getStyle().set("cursor", "pointer");
 		creativityCircle.addClickListener(
 				event -> { 
@@ -202,13 +199,13 @@ public MainLayout() {
 		creativityCircle.setColor("#e6ffe6");
 
 		
-		Icon guidenceCircle = new Icon(VaadinIcon.LIFEBUOY);
+		Icon guidenceCircle = new Icon(VaadinIcon.CIRCLE);
 		guidenceCircle.getStyle().set("cursor", "pointer");
 		guidenceCircle.addClickListener(
 				event -> { 
-                	diary.setPlaceholder("Guidence entry here");
+                	diary.setPlaceholder("Guidance entry here");
                 	diary.setEnabled(true);
-                	entryType = "Guidence";
+                	entryType = "Guidance";
         });
 		guidenceCircle.setSize("150px");
 		guidenceCircle.setColor("#8c8c8c");
@@ -232,13 +229,14 @@ public MainLayout() {
 		HorizontalLayout view = new HorizontalLayout();
 		HorizontalLayout layout = new HorizontalLayout();
 		VerticalLayout organize = new VerticalLayout();
-				
-		diary.setLabel("Write your entry below :)");
 		
+		diary.setEnabled(false);
+    	diary.setWidth("700px");				
+		diary.setLabel("Write your entry below :)");		
         diary.setPlaceholder("");
         
         Button generateChart = new Button("View Chart", event -> {
-        	PieChartSample chart = new PieChartSample();
+        	GenerateChart chart = new GenerateChart();
         	try {
 				chart.main();
 			} catch (Exception e) {
@@ -246,6 +244,7 @@ public MainLayout() {
 			} 
         	
         });   
+        generateChart.setDisableOnClick(true);
 
         Button button = new Button("Save Entry", event -> {
         	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
