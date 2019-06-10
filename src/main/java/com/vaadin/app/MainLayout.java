@@ -52,56 +52,6 @@ public MainLayout() {
 		
 		diary.setPlaceholder("placeholder text");
 		
-//        Button wealth = new Button("Wealth", event -> { 
-//                	diary.setPlaceholder("Wealth entry here");
-//                	diary.setEnabled(true);
-//        });
-//
-//        
-//        Button community = new Button("Community", event -> {
-//        	diary.setPlaceholder("Community entry here");
-//        	diary.setEnabled(true);
-//    });
-//        
-//        Button wisdom = new Button("Wisdom", event -> {
-//        	diary.setPlaceholder("Wisdom entry here");
-//        	diary.setEnabled(true);
-//        });
-//        
-//        Button reputation = new Button("Reputation", event -> {
-//        	diary.setPlaceholder("Reputation entry here");
-//        	diary.setEnabled(true);
-//});
-//        
-//        Button health = new Button("Health", event -> {
-//        	diary.setPlaceholder("Health entry here");
-//        	diary.setEnabled(true);
-//        });
-//        
-//        Button purpose = new Button("Purpose", event -> {
-//        	diary.setPlaceholder("Purpose entry here");
-//        	diary.setEnabled(true);
-//        });
-//        
-//        Button love = new Button("Love", event -> {
-//        	diary.setPlaceholder("Love entry here");
-//        	diary.setEnabled(true);
-//        });
-//        
-//        Button creativity = new Button("Creativity", event -> {
-//        	diary.setPlaceholder("Creativity entry here");
-//        	diary.setEnabled(true);
-//        });
-//        
-//        Button guidence = new Button("Guidence", event -> {
-//        	diary.setPlaceholder("Guidence entry here");
-//        	diary.setEnabled(true);
-//        });
-		
-//		  layout.add(wealth, community, wisdom);
-//	      layout2.add(reputation, health, purpose);
-//	      layout3.add(love, creativity, guidence);
-		
 		
 		Icon wealthCircle = new Icon(VaadinIcon.CIRCLE);
 		wealthCircle.getStyle().set("cursor", "pointer");
