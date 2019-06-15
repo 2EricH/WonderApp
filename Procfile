@@ -1,1 +1,1 @@
-web: java  -jar target/dependency/jetty-runner.jar --port  target/*.war
+web: mvn jetty:run
