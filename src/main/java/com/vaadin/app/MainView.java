@@ -16,7 +16,7 @@ import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
 
 @SuppressWarnings("serial")
-@Route(value = "com.vaadin.app")
+@Route(value = "")
 @PWA(name = "Project Base for Vaadin Flow", shortName = "Project Base")
 //@Theme(value = Lumo.class, variant = Lumo.DARK)
 
