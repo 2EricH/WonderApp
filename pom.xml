@@ -72,12 +72,12 @@
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-charts-flow</artifactId>
             </dependency>
-            
+
 <!-- I added this -->
             <dependency>
     			<groupId>com.heroku.sdk</groupId>
     			<artifactId>heroku-maven-plugin</artifactId>
-    			<version>1.0.3</version>
+    			<version>7.26.2</version>
 			</dependency>
 <!-- I added this -->
 
