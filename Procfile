@@ -1,1 +1,1 @@
-web: mvn jetty:run 
+web: heroku local:start 
