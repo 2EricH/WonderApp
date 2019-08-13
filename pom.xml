@@ -77,7 +77,7 @@
             <dependency>
     			<groupId>com.heroku.sdk</groupId>
     			<artifactId>heroku-maven-plugin</artifactId>
-    			<version>7.26.2</version>
+    			<version>3.6.0</version>
 			</dependency>
 <!-- I added this -->
 
@@ -141,8 +141,6 @@
             </plugin>
         
 <!--  heroku maven plugin -->
-        
-
 
             <!-- Jetty plugin for easy testing without a server -->
 
