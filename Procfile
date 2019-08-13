@@ -1,1 +1,1 @@
-web: heroku local:start 
+web:
