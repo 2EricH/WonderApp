@@ -1,1 +1,1 @@
-web: java MainView
+web: java -cp target/classes/com/vaadin/app MainView
