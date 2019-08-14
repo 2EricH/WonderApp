@@ -105,12 +105,14 @@
             <artifactId>slf4j-simple</artifactId>
         </dependency>
 
-        <!-- <dependency>
+        <!-- JavaFX depencdency -->
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
-        </dependency> -->
+        </dependency>
+        <!-- JavaFX depencdency -->
     </dependencies>
 
     <build>

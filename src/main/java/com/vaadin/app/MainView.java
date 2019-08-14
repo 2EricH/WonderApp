@@ -35,4 +35,9 @@ public class MainView extends SplitLayout{
                
         
 	}
+
+	public static void Main(int args[]){
+		MainView();
+		println("done");
+	}
 }
