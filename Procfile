@@ -1,1 +1,1 @@
-web: jetty:run
+web: java MainView
