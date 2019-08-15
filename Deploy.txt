@@ -1,0 +1,3 @@
+heroku deploy:war --war wonderapp-1.0-SNAPSHOT.war
+
+(run from war file directory: wonderapp/target)

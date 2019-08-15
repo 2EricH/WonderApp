@@ -48,7 +48,7 @@ public MainLayout() {
 		VerticalLayout layout3 = new VerticalLayout();
 
 		
-		Label firstLabel = new Label("Circular Design View");
+		Label firstLabel = new Label("");
 		
 		diary.setPlaceholder("placeholder text");
 		
