@@ -1,3 +1,6 @@
 heroku deploy:war --war wonderapp-1.0-SNAPSHOT.war
-
 (run from war file directory: wonderapp/target)
+
+
+mvn -B -DskipTests clean dependency:list install
+New dependency list (re builds target)

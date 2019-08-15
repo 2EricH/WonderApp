@@ -48,7 +48,7 @@ public MainLayout() {
 		VerticalLayout layout3 = new VerticalLayout();
 
 		
-		Label firstLabel = new Label("");
+		Label firstLabel = new Label("Test here");
 		
 		diary.setPlaceholder("placeholder text");
 		
