@@ -18,7 +18,7 @@ import com.vaadin.flow.theme.lumo.Lumo;
 @SuppressWarnings("serial")
 @Route(value = "")
 @PWA(name = "Project Base for Vaadin Flow", shortName = "Project Base")
-//@Theme(value = Lumo.class, variant = Lumo.DARK)
+@Theme(value = Lumo.class, variant = Lumo.DARK)
 
 public class MainView extends SplitLayout{
 	
